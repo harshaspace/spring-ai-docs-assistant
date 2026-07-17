@@ -7,6 +7,7 @@ from gitsource import GithubRepositoryDataReader
 from gitsource import chunk_documents
 
 from embedding import generate_embeddings
+from pyfiglet import figlet_format
 
 from config import ELASTICSEARCH_URL, INDEX_NAME
 
@@ -64,9 +65,16 @@ def index_chunks(chunks):
             }
         )
 
-    bulk(es, actions)
+    success, errors = bulk(es, actions, raise_on_error=False)
 
-    print(f"Indexed {len(actions)} chunks.")
+    print(f"Successfully indexed: {success}")
+    print(f"Errors: {len(errors)}")
+
+    if errors:
+        print(errors[0])
+    else:
+        print(figlet_format("STARTUP", font="slant"))
+        print("🚀 Spring AI Docs Assistant is Ready!")
 
 def main():
     """Run the ingestion pipeline from loading to indexing."""

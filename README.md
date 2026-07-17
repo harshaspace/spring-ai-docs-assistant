@@ -4,3 +4,18 @@ SpringAI Docs Assistant - The App helps you to learn spring AI in no time
 ## Installation steps
 
 `docker compose up -d --build`
+
+Startup may take while to complete.
+please wait until you see, following success message.
+
+
+   _____ __             __
+  / ___// /_____ ______/ /___  ______
+  \__ \/ __/ __ `/ ___/ __/ / / / __ \
+ ___/ / /_/ /_/ / /  / /_/ /_/ / /_/ /
+/____/\__/\__,_/_/   \__/\__,_/ .___/
+                              /_/
+
+🚀 Spring AI Docs Assistant is Ready!
+
+
