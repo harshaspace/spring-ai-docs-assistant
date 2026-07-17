@@ -6,6 +6,8 @@ from elasticsearch.helpers import bulk
 from gitsource import GithubRepositoryDataReader
 from gitsource import chunk_documents
 
+from embedding import generate_embeddings
+
 from config import ELASTICSEARCH_URL, INDEX_NAME
 
 
@@ -36,28 +38,35 @@ def load_chunks():
 
 def index_chunks(chunks):
     """Send the prepared chunks to Elasticsearch for indexing."""
+    
+    # Generate embeddings in batches
+    embeddings = generate_embeddings(
+        [chunk["content"] for chunk in chunks]
+    )
+
     # Connect to the configured Elasticsearch instance.
     es = Elasticsearch(ELASTICSEARCH_URL)
 
     # Build bulk indexing actions for each chunk.
-    actions = [
-        {
-            "_index": INDEX_NAME,
-            "_id": i,
-            "_source": {
-                "content": chunk["content"],
-                "filename": chunk["filename"],
-                "start": chunk["start"],
-            },
-        }
-        for i, chunk in enumerate(chunks)
-    ]
+    actions = []
 
-    # Index all prepared actions in one bulk request.
+    for i, (chunk, embedding) in enumerate(zip(chunks, embeddings)):
+        actions.append(
+            {
+                "_index": INDEX_NAME,
+                "_id": i,
+                "_source": {
+                    "content": chunk["content"],
+                    "filename": chunk["filename"],
+                    "start": chunk["start"],
+                    "embedding": embedding,
+                },
+            }
+        )
+
     bulk(es, actions)
 
     print(f"Indexed {len(actions)} chunks.")
-
 
 def main():
     """Run the ingestion pipeline from loading to indexing."""

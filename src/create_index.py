@@ -16,6 +16,12 @@ def create_index():
                 "content": {"type": "text"},
                 "filename": {"type": "keyword"},
                 "start": {"type": "integer"},
+                "embedding": {
+                    "type": "dense_vector",
+                    "dims": 384,
+                    "index": True,
+                    "similarity": "cosine",
+                },
             }
         },
     )
