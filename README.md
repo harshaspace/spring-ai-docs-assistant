@@ -7,7 +7,7 @@ create .env file in root directory of the project. Add open API key into it.
 
 `OPENAI_API_KEY=<Your-open-api-key>`
 
-`docker compose up -d --build`
+`docker compose up --build`
 
 Startup may take while to complete.
 please wait until you see, following success message.

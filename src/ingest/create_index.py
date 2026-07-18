@@ -1,5 +1,5 @@
 from elasticsearch import Elasticsearch
-from config import ELASTICSEARCH_URL, INDEX_NAME
+from src.config import ELASTICSEARCH_URL, INDEX_NAME
 
 
 def create_index():

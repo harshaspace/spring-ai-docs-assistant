@@ -6,10 +6,10 @@ from elasticsearch.helpers import bulk
 from gitsource import GithubRepositoryDataReader
 from gitsource import chunk_documents
 
-from embedding.embedding import generate_embeddings
+from src.embedding.embedding import generate_embeddings
 from pyfiglet import figlet_format
 
-from config import ELASTICSEARCH_URL, INDEX_NAME
+from src.config import ELASTICSEARCH_URL, INDEX_NAME
 
 
 def load_chunks():

@@ -1,7 +1,7 @@
 from elasticsearch import Elasticsearch
 
-from config import ELASTICSEARCH_URL, INDEX_NAME
-from embedding.embedding import generate_embedding
+from src.config import ELASTICSEARCH_URL, INDEX_NAME
+from src.embedding.embedding import generate_embedding
 
 
 def hybrid_search(query: str, k: int = 5):

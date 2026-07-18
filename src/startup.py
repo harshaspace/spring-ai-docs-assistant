@@ -1,5 +1,5 @@
-from ingest.create_index import create_index
-from ingest.data_ingest import load_chunks, index_chunks
+from src.ingest.create_index import create_index
+from src.ingest.data_ingest import load_chunks, index_chunks
 
 
 def main():
