@@ -36,7 +36,7 @@ def hybrid_search(query: str, k: int = 5):
     return reciprocal_rank_fusion(
         bm25["hits"]["hits"],
         knn["hits"]["hits"],
-        k,
+        k=k,
     )
 
 
