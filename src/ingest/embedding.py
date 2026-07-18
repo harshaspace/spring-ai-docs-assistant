@@ -11,6 +11,18 @@ def get_model():
 
     return _MODEL
 
+def generate_embedding(text: str) -> list[float]:
+    """Generate an embedding for a single piece of text."""
+
+    model = get_model()
+
+    embedding = model.encode(
+        text,
+        normalize_embeddings=True,
+        show_progress_bar=False,
+    )
+
+    return embedding.tolist()
 
 def generate_embeddings(texts: list[str]) -> list[list[float]]:
     model = get_model()
