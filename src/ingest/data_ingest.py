@@ -6,7 +6,7 @@ from elasticsearch.helpers import bulk
 from gitsource import GithubRepositoryDataReader
 from gitsource import chunk_documents
 
-from .embedding import generate_embeddings
+from embedding.embedding import generate_embeddings
 from pyfiglet import figlet_format
 
 from config import ELASTICSEARCH_URL, INDEX_NAME
