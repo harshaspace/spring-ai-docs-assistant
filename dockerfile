@@ -13,5 +13,3 @@ RUN uv sync --frozen
 # Use the virtual environment created by uv
 ENV PATH="/app/.venv/bin:$PATH"
 ENV PYTHONPATH=/app
-
-CMD ["python", "-m", "src.startup"]

@@ -23,5 +23,18 @@ services:
         condition: service_healthy
     environment:
       ELASTICSEARCH_URL: http://elasticsearch:9200
-    command: python src/startup.py
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+    command: python -m src.startup
     restart: "no"
+
+  api:
+    build: .
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+    command: uvicorn src.api.app:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
