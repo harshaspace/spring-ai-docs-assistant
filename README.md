@@ -3,6 +3,10 @@ SpringAI Docs Assistant - The App helps you to learn spring AI in no time
 
 ## Installation steps
 
+create .env file in root directory of the project. Add open API key into it.
+
+`OPENAI_API_KEY=<Your-open-api-key>`
+
 `docker compose up -d --build`
 
 Startup may take while to complete.
