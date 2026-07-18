@@ -8,7 +8,9 @@ dependencies = [
     "elasticsearch>=8.15,<9",
     "gitsource>=0.0.5",
     "jupyter>=1.1.1",
+    "openai>=2.46.0",
     "pyfiglet>=1.0.4",
+    "python-dotenv>=1.2.2",
     "sentence-transformers>=5.6.0",
 ]
 [tool.uv.sources]
