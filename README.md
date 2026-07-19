@@ -4,6 +4,12 @@ An AI-powered documentation assistant that enables natural language search and q
 
 The application ingests the official Spring AI documentation from GitHub, chunks and embeds the content, indexes it in Elasticsearch, and combines keyword and semantic search to retrieve the most relevant documentation. Retrieved context is then provided to an LLM to generate accurate, context-aware responses with source references.
 
+## Demo
+
+<p align="center">
+  <img src="diagram/spring-ai-docs-rag.gif" alt="Demo" width="900">
+</p>
+
 ## Features
 
 - Hybrid retrieval using BM25 and vector search
@@ -12,6 +18,8 @@ The application ingests the official Spring AI documentation from GitHub, chunks
 - Elasticsearch-backed document and vector index
 - OpenAI GPT-powered question answering
 - Streamlit chat interface
+- Able to capture user feedback
+- Streamlit metrics dashboard
 - FastAPI REST API
 - Docker Compose for local development
 - Unit tests for core components
@@ -105,3 +113,4 @@ Once the startup is complete, you can access:
 > | **8000** | FastAPI REST API |
 > | **8501** | Streamlit UI |
 > | **9200** | Elasticsearch |
+
