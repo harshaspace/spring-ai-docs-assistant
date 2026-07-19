@@ -10,6 +10,7 @@ dependencies = [
     "gitsource>=0.0.5",
     "jupyter>=1.1.1",
     "openai>=2.46.0",
+    "pandas>=3.0.3",
     "pydantic>=2.13.4",
     "pyfiglet>=1.0.4",
     "python-dotenv>=1.2.2",
