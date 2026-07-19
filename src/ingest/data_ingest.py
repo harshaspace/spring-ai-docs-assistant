@@ -40,6 +40,8 @@ def load_chunks():
 def index_chunks(chunks):
     """Send the prepared chunks to Elasticsearch for indexing."""
     
+    print("⏳ Please wait, this may take a while!")
+
     # Generate embeddings in batches
     embeddings = generate_embeddings(
         [chunk["content"] for chunk in chunks]

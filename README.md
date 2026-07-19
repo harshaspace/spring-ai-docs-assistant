@@ -73,7 +73,7 @@ docker compose up --build
 
 ### 3. Wait for startup to complete
 
-The application is ready when the following banner appears in the logs:
+The application is ready when the following banner appears in the logs: (It takes time to startup in first run)
 
 ```text
    _____ __             __
@@ -90,6 +90,12 @@ Once the startup is complete, you can access:
 
 - **Streamlit UI:** http://localhost:8501
 - **FastAPI Swagger UI:** http://localhost:8000/docs
+
+## Test data (Queries)
+- How do I configure memory in Spring AI?
+- What is the purpose of the `@McpTool` annotation?
+- What embedding models are supported?
+- What is the weather looks like today? (negative)
 
 > **Note**
 > Make sure the following ports are available on your machine before starting the application:
