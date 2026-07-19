@@ -38,3 +38,14 @@ services:
     command: uvicorn src.api.app:app --host 0.0.0.0 --port 8000
     ports:
       - "8000:8000"
+
+  ui:
+    build: .
+    depends_on:
+      - api
+    command: >
+      streamlit run src/ui/app.py
+      --server.address=0.0.0.0
+      --server.port=8501
+    ports:
+      - "8501:8501"
