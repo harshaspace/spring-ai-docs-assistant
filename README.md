@@ -7,7 +7,7 @@ The application ingests the official Spring AI documentation from GitHub, chunks
 ## Demo
 
 <p align="center">
-  <img src="diagram/spring-ai-docs-rag.gif" alt="Demo" width="900">
+  <img src="diagram/demo.gif" alt="Demo" width="900">
 </p>
 
 ## Features
